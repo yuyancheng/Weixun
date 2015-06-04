@@ -1,0 +1,35 @@
+<!-- list -->
+<ul class="nav">
+
+  <li ng-repeat="A in app.ui.items" class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span ng-bind="A.type"></span>
+  </li>
+  <li ng-init="B = A.items"></li>
+  <li ng-repeat="C in app.ui.items[0].items">
+    <a ui-sref="{{C.route}}" class="auto">
+      <i class="glyphicon {{C.icon}} icon"></i>
+      <span class="font-bold" ng-bind="C.name"></span>
+    </a>
+
+  </li>
+
+  <li class="line dk hidden-folded"></li>
+
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">          
+    <span translate="aside.nav.your_stuff.YOUR_STUFF">Your Stuff</span>
+  </li>  
+  <li>
+    <a ui-sref="app.page.profile">
+      <i class="icon-user icon text-success-lter"></i>
+      <b class="badge bg-success pull-right">70%</b>
+      <span>工作计划</span>
+    </a>
+  </li>
+  <li>
+    <a ui-sref="app.docs">
+      <i class="icon-question icon"></i>
+      <span>工作总结</span>
+    </a>
+  </li>
+</ul>
+<!-- / list -->
